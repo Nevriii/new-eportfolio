@@ -72,7 +72,34 @@ input:focus, textarea:focus, select:focus {
 		max-width: 100%;
 		padding: 0 150px;
 	}
+  nav.navbar a.navbar-brand {
+    width: 500%;
+  }
 }
+/* Smaller screens: e.g., phones */
+@media (max-width: 767px) {
+  nav.navbar a.navbar-brand img {
+    min-width: 10%; /* smaller logo on mobile */
+    width: 200%;
+  }
+}
+
+/* Medium screens: tablets, small laptops */
+@media (min-width: 768px) and (max-width: 1199px) {
+  nav.navbar a.navbar-brand img {
+    min-width: 10%; /* smaller logo on mobile */
+    width: 200%;
+  }
+}
+
+/* Large screens: desktops */
+@media (min-width: 1200px) {
+  nav.navbar a.navbar-brand img {
+    min-width: 10%; /* smaller logo on mobile */
+    width: 100%;
+  }
+}
+
 
 p.success {
 	color: green;
@@ -83,7 +110,7 @@ p.danger {
 }
 /************ Navbar Css ************/
 nav.navbar {
-  padding: 18px 0;
+  padding: 0px 0px;
   position: fixed;
   width: 100%;
   top: 0;
@@ -95,7 +122,7 @@ nav.navbar.scrolled {
   background-color: #121212;
 }
 nav.navbar a.navbar-brand {
-    width: 9%;
+    width: 10%;
 }
 nav.navbar .navbar-nav .nav-link.navbar-link {
   font-weight: 400;
@@ -104,6 +131,7 @@ nav.navbar .navbar-nav .nav-link.navbar-link {
   padding: 0 25px;
   font-size: 18px;
   opacity: 0.75;
+  text-align: right;
 }
 nav.navbar .navbar-nav a.nav-link.navbar-link:hover,
 nav.navbar .navbar-nav a.nav-link.navbar-link.active {
@@ -128,6 +156,7 @@ span.navbar-text {
     justify-content: center;
     line-height: 1;
     border: 1px solid rgba(255, 255, 255, 0.5);
+    
 }
 .social-icon a::before {
     content: "";
@@ -306,7 +335,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   position: relative;
 }
 .skill-bx {
-  background: #151515;
+  background: #d5d2d2;
   border-radius: 64px;
   text-align: center;
   padding: 60px 50px;
