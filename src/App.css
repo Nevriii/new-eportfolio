@@ -179,6 +179,45 @@ span.navbar-text {
 .social-icon a:hover img {
 	filter: brightness(0) saturate(100%) invert(0%) sepia(7%) saturate(98%) hue-rotate(346deg) brightness(95%) contrast(86%);
 }
+/* Add these CSS rules to your App.css file to move social icons to the right on mobile */
+
+/* Mobile responsive adjustments for navbar */
+@media (max-width: 991px) {
+  .navbar-collapse {
+    text-align: right;
+  }
+  
+  .navbar-nav {
+    align-items: flex-end;
+  }
+  
+  span.navbar-text {
+    justify-content: flex-end;
+    margin-top: 20px;
+    padding-right: 15px;
+  }
+  
+  .social-icon {
+    margin-left: 8px;
+  }
+  
+  .navbar-text button {
+    margin-left: 0;
+    margin-top: 15px;
+  }
+}
+
+/* Ensure proper alignment for the collapsed navbar content */
+@media (max-width: 991px) {
+  .navbar-nav .nav-link.navbar-link {
+    text-align: right;
+    padding-right: 15px;
+  }
+  
+  .navbar-collapse .navbar-nav {
+    margin-top: 20px;
+  }
+}
 .navbar-text button {
   font-weight: 700;
   color: #fff;
@@ -260,39 +299,80 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 }
 
 /************ Banner Css ************/
-.banner {
-  margin-top: 0;
+.banner { 
+  margin-top: 0; 
   padding: 260px 0 100px 0;
-  background-image: url('./assets/img/banner-bg.png');
-  background-position: top center;
-  background-size: cover;
+  background-image: url('./assets/img/wave3.svg'); 
+  background-position: bottom center; 
+  background-size: cover; 
   background-repeat: no-repeat;
+  min-height: 160vh;
+  position: relative;
+} 
+
+.banner .Container {
+  max-width: 1200px;
 }
+
+.banner .text-content {
+  padding-left: 180px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.banner .image-content {
+  padding-right: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .banner .tagline {
-  font-weight: 700;
-  letter-spacing: 0.8px;
-  padding: 8px 10px;
-  background: linear-gradient(90.21deg, rgba(170, 54, 124, 0.5) -5.91%, rgba(74, 47, 189, 0.5) 111.58%);
-  border: 1px solid rgba(255, 255, 255, 0.5);
+  font-weight: 900;
+  letter-spacing: 4px;
+  padding: 0; /* Remove padding for text effect */
+  background: linear-gradient(90deg, #7236aa, #2fbd65, #97aa36, #bd6a2f);
+  background-size: 300% 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   font-size: 20px;
   margin-bottom: 16px;
   display: inline-block;
+  text-shadow: none; /* Remove text shadow for clean gradient effect */
+  animation: gradientMoveSlide 10s ease-in-out infinite;
 }
+
+@keyframes gradientMoveSlide {
+  100% {
+    background-position: -300% 0;
+  }
+  0% {
+    background-position: 300% 0;
+  }
+}
+
 .banner h1 {
   font-size: 65px;
   font-weight: 700;
-  letter-spacing: 0.8px;
+  letter-spacing: 5px;
   line-height: 1;
   margin-bottom: 20px;
   display: block;
+  text-shadow: 3px 3px 12px rgba(255, 255, 255, 0.405);
 }
+
 .banner p {
   color: #B8B8B8;
   font-size: 18px;
-  letter-spacing: 0.8px;
+  letter-spacing: 4px;
   line-height: 1.5em;
-  width: 96%;
+  width: 100%;
+  text-shadow: 1px 1px 4px rgba(255, 255, 255, 0.405);
 }
+
 .banner button {
   color: #fff;
   font-weight: 700;
@@ -302,31 +382,49 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   display: flex;
   align-items: center;
 }
+
 .banner button svg {
   font-size: 25px;
   margin-left: 10px;
   transition: 0.3s ease-in-out;
   line-height: 1;
 }
+
 .banner button:hover svg {
   margin-left: 25px;
 }
+
 .banner img {
-  animation: updown 3s linear infinite;
+  /* animation: updown 3s linear infinite; */
+  width: 100%;
+  height: auto;
+  max-width: 400px;
+  border-radius: 10dvh;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
 }
-@keyframes updown {
-    0% {
-        transform: translateY(-20px);
-    }
-    50% {
-        transform: translateY(20px);
-    }
-    100% {
-        transform: translateY(-20px);
-    }
-}
+
 .txt-rotate > .wrap {
   border-right: 0.08em solid #666;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .banner .text-content,
+  .banner .image-content {
+    padding-left: 50px;
+    padding-right: 50px;
+    text-align: center;
+  }
+  
+  .banner .text-content {
+    align-items: center;
+    margin-bottom: 30px;
+  }
+  
+  .banner h1 {
+    font-size: 45px;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
+  }
 }
 
 /************ Skills Css ************/
