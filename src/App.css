@@ -31,7 +31,8 @@ body {
   font-weight: 400;
   overflow-x: hidden;
   position: relative;
-  background-color: #121212 !important;
+  /* background-color: #121212 !important; */
+  background-image: url("./assets/img/endless-constellation.svg");
   color: #fff !important;
   font-family: 'Centra', sans-serif !important;
 }
@@ -67,6 +68,8 @@ input:focus, textarea:focus, select:focus {
   outline: none;
 }
 
+/* Replace your existing media queries with these updated ones */
+
 @media (min-width:1700px) {
 	main .container {
 		max-width: 100%;
@@ -75,28 +78,122 @@ input:focus, textarea:focus, select:focus {
   nav.navbar a.navbar-brand {
     width: 500%;
   }
+  
+  /* Keep default overlap for large screens */
+  .skill {
+    margin-top: -390px;
+  }
 }
-/* Smaller screens: e.g., phones */
+
+/* Mobile screens: phones */
 @media (max-width: 767px) {
   nav.navbar a.navbar-brand img {
-    min-width: 10%; /* smaller logo on mobile */
+    min-width: 10%;
     width: 200%;
+  }
+
+  .banner {
+    padding: 180px 0 30px 0; /* Reduced padding for mobile */
+    min-height: 120vh; /* Reduced height for mobile */
+  }
+  
+  .banner .text-content,
+  .banner .image-content {
+    padding-left: 20px;
+    padding-right: 20px;
+    text-align: center;
+  }
+  
+  .banner .text-content {
+    align-items: center;
+    margin-bottom: 30px;
+  }
+  
+  .banner h1 {
+    font-size: 45px;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
+  }
+
+  .skill {
+    padding: 0 0 50px 0;
+    position: relative;
+    z-index: 2;
+    margin-top: -150px;
+  }
+  .skill-bx {
+    border-radius: 39px;
+    background-image: linear-gradient(to bottom, #051937, #004d7a, #008793, #00bf72, #a8eb12);
+    box-shadow:  37px 37px 100px #060606,
+                -37px -37px 100px #1a1a1a;
+
+    text-align: center;
+    padding: 60px 50px;
+    margin-top: 0px;
+    z-index: 3;
   }
 }
 
 /* Medium screens: tablets, small laptops */
 @media (min-width: 768px) and (max-width: 1199px) {
   nav.navbar a.navbar-brand img {
-    min-width: 10%; /* smaller logo on mobile */
+    min-width: 10%;
     width: 200%;
+  }
+
+  .banner {
+    padding: 200px 0 40px 0; /* Adjusted for tablets */
+    min-height: 140vh;
+  }
+  
+  .banner .text-content {
+    padding-left: 80px; /* Reduced from 180px */
+  }
+  
+  .banner h1 {
+    font-size: 55px; /* Adjusted size for tablets */
+  }
+
+  .skill {
+    padding: 0 0 50px 0;
+    position: relative;
+    z-index: 2;
+    margin-top: -340px;
+  }
+  .skill-bx {
+    border-radius: 39px;
+    background-image: linear-gradient(to bottom, #051937, #004d7a, #008793, #00bf72, #a8eb12);
+    box-shadow:  37px 37px 100px #060606,
+                -37px -37px 100px #1a1a1a;
+    text-align: center;
+    padding: 60px 50px;
+    margin-top: 0px;
+    z-index: 3;
   }
 }
 
-/* Large screens: desktops */
+/* Large screens: desktops (keep your existing desktop styles) */
 @media (min-width: 1200px) {
   nav.navbar a.navbar-brand img {
-    min-width: 10%; /* smaller logo on mobile */
+    min-width: 10%;
     width: 100%;
+  }
+  
+  /* Default overlap for desktop */
+  .skill {
+    padding: 0 0 50px 0;
+    position: relative;
+    z-index: 2;
+    margin-top: -290px;
+  }
+  .skill-bx {
+    border-radius: 39px;
+    background-image: linear-gradient(to bottom, #051937, #004d7a, #008793, #00bf72, #a8eb12);
+    box-shadow:  37px 37px 100px #060606,
+                -37px -37px 100px #1a1a1a;
+    text-align: center;
+    padding: 60px 50px;
+    margin-top: 0px;
+    z-index: 3;
   }
 }
 
@@ -301,13 +398,14 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 /************ Banner Css ************/
 .banner { 
   margin-top: 0; 
-  padding: 260px 0 100px 0;
+  padding: 260px 0 50px 0; /* Reduced from 100px to 50px */
   background-image: url('./assets/img/wave3.svg'); 
   background-position: bottom center; 
   background-size: cover; 
   background-repeat: no-repeat;
   min-height: 160vh;
   position: relative;
+  z-index: 1; /* Ensure banner stays behind skills section */
 } 
 
 .banner .Container {
@@ -428,17 +526,22 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 }
 
 /************ Skills Css ************/
-.skill {
+/* .skill {
   padding: 0 0 50px 0;
   position: relative;
+  z-index: 2;
+  margin-top: -340px;
 }
 .skill-bx {
-  background: #d5d2d2;
-  border-radius: 64px;
+  border-radius: 39px;
+  background: #1d2c3a;
+  box-shadow:  25px 25px 38px #131c25,
+              -25px -25px 38px #273c4f;
   text-align: center;
   padding: 60px 50px;
-  margin-top: -60px;
-}
+  margin-top: 0px;
+  z-index: 3;
+} */
 .skill h2 {
 	font-size: 45px;
 	font-weight: 700;
