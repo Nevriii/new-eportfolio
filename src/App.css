@@ -216,11 +216,14 @@ nav.navbar {
 }
 nav.navbar.scrolled {
   padding: 0px 0;
-  background-color: #121212;
+  background: transparent;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(4px);
 }
 nav.navbar a.navbar-brand {
     width: 10%;
 }
+
 nav.navbar .navbar-nav .nav-link.navbar-link {
   font-weight: 400;
   color: #fff !important;
@@ -230,6 +233,95 @@ nav.navbar .navbar-nav .nav-link.navbar-link {
   opacity: 0.75;
   text-align: right;
 }
+
+/* @media (max-width: 2000px) {
+  nav.navbar {
+    padding: 0px 0px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 9999;
+    transition:  0.32s ease-in-out;
+  }
+  nav.navbar.scrolled {
+    padding: 0px 0;
+    background: transparent;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(4px);
+  }
+  nav.navbar a.navbar-brand {
+    width: 6%;
+    margin-right: 10%;
+  }
+  nav.navbar .navbar-nav .nav-link.navbar-link {
+    font-weight: 400;
+    color: #fff !important;
+    letter-spacing: 0.8px;
+    padding: 0 20px;
+    font-size: 18px;
+    opacity: 0.75;
+    text-align: right;
+  }
+} */
+
+@media (max-width: 1199px) {
+  nav.navbar {
+    padding: 0px 0px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 9999;
+    transition:  0.32s ease-in-out;
+  }
+  nav.navbar.scrolled {
+    padding: 0px 0;
+    background: transparent;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(4px);
+  }
+  nav.navbar a.navbar-brand {
+    width: 9%;
+    margin-right: 12%;
+  }
+  nav.navbar .navbar-nav .nav-link.navbar-link {
+    font-weight: 400;
+    color: #fff !important;
+    letter-spacing: 0.8px;
+    padding: 0 20px;
+    font-size: 18px;
+    opacity: 0.75;
+    text-align: right;
+  }
+}
+@media (max-width: 999px) {
+  nav.navbar {
+    padding: 0px 0px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 9999;
+    transition:  0.32s ease-in-out;
+  }
+  nav.navbar.scrolled {
+    padding: 0px 0;
+    background: transparent;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(4px);
+  }
+  nav.navbar a.navbar-brand {
+    width: 10%;
+  }
+  nav.navbar .navbar-nav .nav-link.navbar-link {
+    font-weight: 400;
+    color: #fff !important;
+    letter-spacing: 0.8px;
+    padding: 0 20px;
+    font-size: 18px;
+    opacity: 0.75;
+    text-align: right;
+  }
+}
+
 nav.navbar .navbar-nav a.nav-link.navbar-link:hover,
 nav.navbar .navbar-nav a.nav-link.navbar-link.active {
     opacity: 1;
@@ -928,4 +1020,12 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   color: #B8B8B8;
   letter-spacing: 0.5px;
   margin-top: 20px;
+}
+
+/* ************ e-certificates Css ************/
+.e-certs h2 {
+  font-size: 45px;
+	font-weight: 700;
+  text-align: center;
+  align-items: center;
 }

@@ -1,0 +1,144 @@
+.e-certificates {
+  position: relative;
+  background: transparent;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  min-height: 100vh;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+figure {
+	position: sticky;
+	top: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100vw;
+	height: 100vh;
+
+	$photos: 9;
+
+	@for $i from 1 through $photos {
+		&:nth-child(#{$i}) {
+			img {
+				$rotation: (($i - 1)/ ($photos - 1)) - 0.5;
+				transform: scale(0.6) rotate($rotation * 25deg);
+			}
+		}
+	}
+
+	img {
+		width: 120vmin;
+		height: 120vmin;
+		border-radius: 3px;
+		margin-top: 50px; // More space from top for large screens
+		transition: margin-top 0.3s;
+	}
+  @media (max-width: 1000px) {
+    img {
+      width: 140vmin;
+      height: 140vmin;
+    }
+  }
+  @media (max-width: 890px) {
+    img {
+      width: 140vmin;
+      height: 140vmin;
+    }
+  }
+  @media (max-width: 768px) {
+    img {
+      width: 100vmin;
+      height: 100vmin;
+    }
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 0.5;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: translate(-50%, -50%) scale(1.05);
+  }
+}
+
+// Responsive design
+@media (max-width: 1699px) {
+  .e-certificates {
+    .e-certificates-bx {
+      h2 {
+        font-size: 2rem;
+        top: 30px;
+        padding: 10px 20px;
+      }
+      .certificates-container figure img {
+        width: 120vmin;
+        height: 120vmin;
+        padding: 15px;
+        margin-top: 140px; // Closer to top for tablets
+        margin-right: 10%;
+      }
+    }
+  }
+}
+@media (max-width: 1199px) {
+  .e-certificates {
+    .e-certificates-bx {
+      h2 {
+        font-size: 2rem;
+        top: 30px;
+        padding: 10px 20px;
+      }
+      .certificates-container figure img {
+        width: 100vmin;
+        height: 100vmin;
+        padding: 15px;
+        margin-top: 125px; // Closer to top for tablets
+      }
+    }
+  }
+}
+
+@media (max-width: 999px) {
+  .e-certificates {
+    .e-certificates-bx {
+      h2 {
+        font-size: 2rem;
+        top: 30px;
+        padding: 8px 12px;
+      }
+      .certificates-container figure img {
+        width: 100vmin;
+        height: 100vmin;
+        padding: 15px;
+        margin-top: 100px; // Closer to top for tablets
+        margin-right: 12%;
+      }
+    }
+  }
+}
+
+@media (max-width: 499px) {
+  .e-certificates {
+    .e-certificates-bx {
+      h2 {
+        font-size: 1.5rem;
+        top: 20px;
+        padding: 8px 12px;
+      }
+      .certificates-container figure img {
+        width: 130vmin;
+        height: 130vmin;
+        padding: 10px;
+        margin-top: 10px; // Closest to top for phones
+        margin-right: 7%;
+      }
+    }
+  }
+}

@@ -3,7 +3,7 @@ import './App.css';
 import { NavBar } from './components/NavBar';
 import { Introduction } from './components/Introduction';
 import { Skills } from './components/Skills';
-import { eCertificates } from './components/eCertificates';
+import { ECertificates } from './components/ECertificates';
 import Banner from './assets/img/banner-bg.png';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -13,7 +13,7 @@ function App() {
       <NavBar />
       <Introduction />
       <Skills />
-      <eCertificates />
+      <ECertificates />
     </div>
   );
 }
