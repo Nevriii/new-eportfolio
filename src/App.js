@@ -6,7 +6,6 @@ import { Skills } from './components/Skills';
 import { Projects } from './components/Projects';
 import { ECertificates } from './components/ECertificates';
 import { Contact } from './components/Contact';
-import Banner from './assets/img/banner-bg.png';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {

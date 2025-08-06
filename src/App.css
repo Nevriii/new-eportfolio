@@ -199,11 +199,23 @@ input:focus, textarea:focus, select:focus {
 
 
 p.success {
-	color: green;
+	color: #28a745;
+	background-color: rgba(40, 167, 69, 0.1);
+	border: 1px solid #28a745;
+	padding: 10px 15px;
+	border-radius: 5px;
+	margin: 10px 0;
+	font-weight: 500;
 }
 
 p.danger {
-	color: red;
+	color: #dc3545;
+	background-color: rgba(220, 53, 69, 0.1);
+	border: 1px solid #dc3545;
+	padding: 10px 15px;
+	border-radius: 5px;
+	margin: 10px 0;
+	font-weight: 500;
 }
 /************ Navbar Css ************/
 nav.navbar {
@@ -940,7 +952,16 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   transition: 0.3s ease-in-out;
 }
 .contact form button:hover::before {
-  width: 100%;
+	width: 100%;
+}
+
+.contact form button:disabled {
+	opacity: 0.7;
+	cursor: not-allowed;
+}
+
+.contact form button:disabled:hover::before {
+	width: 0%;
 }
 
 /************ Footer Css ************/
@@ -1172,7 +1193,16 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 }
 
 .contact-modal .contact form button:hover::before {
-  width: 100%;
+	width: 100%;
+}
+
+.contact-modal .contact form button:disabled {
+	opacity: 0.7;
+	cursor: not-allowed;
+}
+
+.contact-modal .contact form button:disabled:hover::before {
+	width: 0%;
 }
 
 /* Mobile responsiveness for sidebar */
