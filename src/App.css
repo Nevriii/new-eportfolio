@@ -778,7 +778,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   width: 56%;
 }
 .project .nav.nav-pills {
-  width: 72%;
+  width: 60%;
   margin: 0 auto;
   border-radius: 50px;
   background-color: rgb(255 255 255 / 10%);
@@ -863,7 +863,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   opacity: 1;
 }
 .proj-txtx h4 {
-  font-size: 30px;
+  font-size: 20px;
   font-weight: 700;
   letter-spacing: 0.8px;
   line-height: 1.1em;
@@ -871,8 +871,8 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 .proj-txtx span {
   font-style: italic;
   font-weight: 400;
-  font-size: 15px;
-  letter-spacing: 0.8px;
+  font-size: 10px;
+  letter-spacing: 0.5px;
 }
 .background-image-right {
   top: 20%;
@@ -881,6 +881,83 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   width: 35%;
   right: 0;
   z-index: -4;
+}
+
+/* Project-img for mobile */
+
+.proj-imgbx-img img {
+  width: 100%!important;
+  height: auto!important;
+}
+/* Make the container smaller to match the image */
+.proj-imgbx-img .proj-imgbx {
+  max-width: 200px; /* Adjust this value as needed */
+  margin: 0 auto; /* Center the container */
+}
+
+/* Keep image at 100% of its container */
+.proj-imgbx-img .proj-imgbx img {
+  width: 100% !important;
+  height: auto !important;
+  object-fit: cover; /* Maintains aspect ratio */
+}
+
+/* The overlay should match the container */
+.proj-imgbx-img .proj-imgbx::before {
+  content: "";
+  background: linear-gradient(90.21deg, #004d7a, #008793, #00bf72, #a8eb12 111.58%);
+  opacity: 0.85;
+  position: absolute;
+  width: 100% !important;
+  height: 0;
+  transition: 0.4s ease-in-out;
+}
+
+.proj-imgbx-img .proj-imgbx:hover::before {
+  height: 100%;
+}
+
+/* Fix text positioning - keep it centered */
+.proj-imgbx-img .proj-txtx {
+  position: absolute;
+  text-align: center;
+  top: 65%;
+  left: 50%; /* Keep at 50% for center alignment */
+  transform: translate(-50%, -50%);
+  transition: 0.5s ease-in-out;
+  opacity: 0;
+  width: 100%;
+}
+
+.proj-imgbx-img .proj-imgbx:hover .proj-txtx {
+  top: 50%;
+  opacity: 1;
+}
+
+.project .tab-pane .row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.project .tab-pane .row .col,
+.project .tab-pane .row [class*="col-"] {
+  flex: 0 0 auto;
+}
+
+/* Optional: Adjust font sizes for smaller mobile cards */
+.proj-imgbx-img .proj-txtx h4 {
+  font-size: 16px; /* Smaller than the original 20px */
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  line-height: 1.1em;
+}
+
+.proj-imgbx-img .proj-txtx span {
+  font-style: italic;
+  font-weight: 400;
+  font-size: 9px; /* Smaller than the original 10px */
+  letter-spacing: 0.5px;
 }
 
 /************ Projects Css ************/
