@@ -219,7 +219,7 @@ p.danger {
 }
 /************ Navbar Css ************/
 nav.navbar {
-  padding: 0px 0px;
+  padding: 0px 200px;
   position: fixed;
   width: 100%;
   top: 0;
@@ -241,6 +241,16 @@ nav.navbar .navbar-nav .nav-link.navbar-link {
   color: #fff !important;
   letter-spacing: 0.8px;
   padding: 0 25px;
+  font-size: 18px;
+  opacity: 0.75;
+  text-align: right;
+}
+
+nav.navbar .navbar-nav .navbar-link2 {
+  font-weight: 400;
+  color: #fff !important;
+  letter-spacing: 0.8px;
+  padding: 10 20px;
   font-size: 18px;
   opacity: 0.75;
   text-align: right;
@@ -334,9 +344,24 @@ nav.navbar .navbar-nav .nav-link.navbar-link {
   }
 }
 
-nav.navbar .navbar-nav a.nav-link.navbar-link:hover,
+nav.navbar .navbar-nav .navbar-link2 {
+    font-weight: 400;
+    color: #fff !important;
+    letter-spacing: 0.8px;
+    padding: 10 10px;
+    font-size: 18px;
+    opacity: 0.75;
+    text-align: right;
+}
+
+nav.navbar .navbar-nav a.nav-link.navbar-link2:hover,
 nav.navbar .navbar-nav a.nav-link.navbar-link.active {
     opacity: 1;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    padding: 0 20px;
+    font-size: 18px;
+    text-align: right;
 }
 span.navbar-text {
     display: flex;
