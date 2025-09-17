@@ -16,11 +16,43 @@ export const NavBar = () => {
             } else {
                 seScrolled(false);
             }
+
+            const sections = [
+                { id: 'home', offset: document.getElementById('home')?.offsetTop || 0 },
+                { id: 'skills', offset: document.getElementById('skills')?.offsetTop || 0 },
+                { id: 'projects', offset: document.getElementById('projects')?.offsetTop || 0 },
+                { id: 'ecerts', offset: document.getElementById('ecerts')?.offsetTop || 0 }
+            ];
+            
+            // Account for navbar height (adjust this value based on your navbar height)
+            const navbarHeight = 75; // Based on your CSS scroll-padding-top
+            const scrollPosition = window.scrollY + navbarHeight;
+            
+            let currentSection = 'home';
+            
+            // Find the current section based on scroll position
+            for (let i = sections.length - 1; i >= 0; i--) {
+                if (scrollPosition >= sections[i].offset - 100) { // 100px buffer for better detection
+                    currentSection = sections[i].id;
+                    break;
+                }
+            }
+            
+            setActivelink(currentSection);
+            if (window.location.hash !== `#${currentSection}`) {
+                window.history.replaceState(null, '', `#${currentSection}`);
+            }
         }
+
+        setTimeout(() => {
+            onScroll();
+        }, 100);
 
         window.addEventListener("scroll", onScroll);
         return () => window.removeEventListener("scroll", onScroll);
     }, [])
+
+
 
     useEffect(() => {
         const sections = document.querySelectorAll('section[id]');
@@ -64,7 +96,8 @@ export const NavBar = () => {
                 </Navbar.Toggle>
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="me-auto" style={{ marginLeft: "30px" }}>
-                        <Nav.Link href="#home" className={activeLink === 'home' ? 'active navbar-link' : 'navbar-link2'}>Home</Nav.Link>
+                        <Nav.Link 
+                            href="#home" className={activeLink === 'home' ? 'active navbar-link' : 'navbar-link2'}>Home</Nav.Link>
                         <Nav.Link href="#skills" className={activeLink === 'skills' ? 'active navbar-link' : 'navbar-link2'}>Skills</Nav.Link>
                         <Nav.Link href="#projects" className={activeLink === 'projects' ? 'active navbar-link' : 'navbar-link2'}>Projects</Nav.Link>
                         <Nav.Link href="#ecerts" className={activeLink === 'ecerts' ? 'active navbar-link' : 'navbar-link2'}>E-Certificates</Nav.Link>
