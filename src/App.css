@@ -528,7 +528,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 .banner { 
   margin-top: 0; 
   padding: 260px 0 50px 0; /* Reduced from 100px to 50px */
-  background-image: url('./assets/img/wave3.svg'); 
+  background-image: url('./assets/img/wave-default-blackbg.svg'); 
   background-position: bottom center; 
   background-size: cover; 
   background-repeat: no-repeat;
@@ -908,7 +908,107 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   z-index: -4;
 }
 
-/* Project-img for mobile */
+/* for smaller screens */
+
+@media (min-width: 589px) and (max-width: 989px) {
+  /* Only affect regular project cards, not mobile ones */
+  .project .tab-pane .row:not(.proj-imgbx-img) .col,
+  .project .tab-pane .row:not(.proj-imgbx-img) [class*="col-"] {
+    flex: 0 0 50% !important;
+    max-width: 50% !important;
+  }
+  
+  /* Regular project cards - make them bigger */
+  .proj-imgbx:not(.proj-imgbx-img .proj-imgbx) {
+    max-width: 500px !important;
+    max-height: 350px !important;
+    width: 100% !important;
+    margin: 0 auto 30px auto;
+    border-radius: 25px;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  /* Keep mobile project cards small */
+  .proj-imgbx-img .proj-imgbx {
+    max-width: 200px !important;
+    margin: 0 auto !important;
+  }
+  
+  .proj-imgbx-img .col,
+  .proj-imgbx-img [class*="col-"] {
+    flex: 0 0 auto !important;
+    max-width: none !important;
+  }
+  
+  .proj-imgbx img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+  
+  .proj-imgbx:hover img {
+    transform: scale(1.05);
+  }
+  
+  .proj-txtx {
+    position: absolute;
+    text-align: center;
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: 0.5s ease-in-out;
+    opacity: 0;
+    width: 100%;
+    padding: 20px;
+  }
+  
+  .proj-imgbx:hover .proj-txtx {
+    top: 50%;
+    opacity: 1;
+  }
+  
+  .proj-txtx h4 {
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    line-height: 1.2em;
+    margin-bottom: 8px;
+    color: #fff;
+  }
+  
+  .proj-txtx span {
+    font-style: italic;
+    font-weight: 400;
+    font-size: 10px;
+    letter-spacing: 0.5px;
+    color: #fff;
+    line-height: 1.4em;
+  }
+  
+  .proj-imgbx::before {
+    content: "";
+    background: linear-gradient(90.21deg, #004d7a, #008793, #00bf72, #a8eb12 111.58%);
+    opacity: 0.85;
+    position: absolute;
+    width: 100%;
+    height: 0;
+    transition: 0.4s ease-in-out;
+    z-index: 1;
+  }
+  
+  .proj-imgbx:hover::before {
+    height: 100%;
+  }
+  
+  .proj-txtx {
+    z-index: 2;
+  }
+}
+
+
+/* Project-img for mobile img project */
 
 .proj-imgbx-img img {
   width: 100%!important;
@@ -1068,11 +1168,17 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 
 /************ Footer Css ************/
 .footer {
-  padding: 0 0 50px 0;
-  background-image: url('./assets/img/footer-bg.png');
-  background-position: center center;
-  background-size: cover;
-  background-repeat: no-repeat;
+  padding: 40px 0;
+  background-color: #121212;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer p {
+  color: #B8B8B8;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  margin: 0;
 }
 .newsletter-bx {
   background: #FFFFFF;
@@ -1310,13 +1416,13 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 /* Mobile responsiveness for sidebar */
 @media (max-width: 768px) {
   .hire-me-sidebar {
-    right: -50px;
+    right: -70px;
     padding: 12px 25px;
     font-size: 14px;
   }
   
   .hire-me-sidebar:hover {
-    right: -40px;
+    right: -60px;
   }
   
   .contact-modal .modal-body {

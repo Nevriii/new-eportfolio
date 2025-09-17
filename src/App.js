@@ -6,6 +6,7 @@ import { Skills } from './components/Skills';
 import { Projects } from './components/Projects';
 import { ECertificates } from './components/ECertificates';
 import { Contact } from './components/Contact';
+import { Footer } from './components/Footer';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
       <Projects />
       <ECertificates />
       <Contact />
+      <Footer />
     </div>
   );
 }
