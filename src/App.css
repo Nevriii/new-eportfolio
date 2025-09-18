@@ -891,13 +891,16 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   font-size: 20px;
   font-weight: 700;
   letter-spacing: 0.8px;
-  line-height: 1.1em;
+  line-height: 1em;
+  padding-bottom: 50px;
 }
 .proj-txtx span {
   font-style: italic;
   font-weight: 400;
   font-size: 10px;
   letter-spacing: 0.5px;
+  line-height: 1.3em;
+  padding-top: 70px;
 }
 .background-image-right {
   top: 20%;
@@ -969,7 +972,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
     opacity: 1;
   }
   
-  .proj-txtx h4 {
+  /* .proj-txtx h4 {
     font-size: 14px;
     font-weight: 700;
     letter-spacing: 0.8px;
@@ -985,6 +988,22 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
     letter-spacing: 0.5px;
     color: #fff;
     line-height: 1.4em;
+  } */
+
+  .proj-txtx h4 {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.6px;
+    line-height: 1em;
+    padding-bottom: 55px;
+  }
+  .proj-txtx span {
+    font-style: italic;
+    font-weight: 100;
+    font-size: 10px;
+    letter-spacing: 0.7px;
+    line-height: 1em;
+    padding-top: 80px;
   }
   
   .proj-imgbx::before {
