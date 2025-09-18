@@ -152,23 +152,6 @@ input:focus, textarea:focus, select:focus {
   .banner h1 {
     font-size: 55px; /* Adjusted size for tablets */
   }
-
-  .skill {
-    padding: 0 0 50px 0;
-    position: relative;
-    z-index: 2;
-    margin-top: -340px;
-  }
-  .skill-bx {
-    border-radius: 39px;
-    background-image: linear-gradient(to bottom, #051937, #004d7a, #008793, #00bf72, #a8eb12);
-    box-shadow:  37px 37px 100px #060606,
-                -37px -37px 100px #1a1a1a;
-    text-align: center;
-    padding: 60px 50px;
-    margin-top: 0px;
-    z-index: 3;
-  }
 }
 
 /* Large screens: desktops (keep your existing desktop styles) */
@@ -176,24 +159,6 @@ input:focus, textarea:focus, select:focus {
   nav.navbar a.navbar-brand img {
     min-width: 10%;
     width: 100%;
-  }
-  
-  /* Default overlap for desktop */
-  .skill {
-    padding: 0 0 50px 0;
-    position: relative;
-    z-index: 2;
-    margin-top: -290px;
-  }
-  .skill-bx {
-    border-radius: 39px;
-    background-image: linear-gradient(to bottom, #051937, #004d7a, #008793, #00bf72, #a8eb12);
-    box-shadow:  37px 37px 100px #060606,
-                -37px -37px 100px #1a1a1a;
-    text-align: center;
-    padding: 60px 50px;
-    margin-top: 0px;
-    z-index: 3;
   }
 }
 
@@ -745,12 +710,87 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   object-fit: contain;
 }
 
-/* Show only on larger screens */
-@media (min-width: 1200px) { /* Adjust this breakpoint as needed */
+/* Large screens: desktops (keep your existing desktop styles) */
+@media (min-width: 1200px) {
+  /* Default overlap for desktop */
+  .skill {
+    padding: 0 0 50px 0;
+    position: relative;
+    z-index: 2;
+    margin-top: -190px;
+  }
+  .skill-bx {
+    text-align: center;
+    padding: 60px 190px;
+    margin-top: 0px;
+  }
+  .skill-bx-txt {
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.1); /* translucent background */
+    backdrop-filter: blur(5px) saturate(10%);
+    -webkit-backdrop-filter: blur(12px) saturate(150%);
+    /* border: 1px solid rgba(255, 255, 255, 0.25); subtle glass border */
+    box-shadow: 0px 8px 32px rgba(0, 0, 0, 0.37); /* soft depth */
+    text-align: center;
+    padding: 30px;
+    color: #fff; /* ensures readability on dark bg */
+  }
+  
+  .text-content {
+    padding-top: 50px
+  }
+  .skill-bx h2  {
+    padding-bottom: 30px;
+  }
+}
+
+@media (min-width: 999px) and (max-width: 1199px) {
+  .skill {
+    padding: 0 0 50px 0;
+    position: relative;
+    z-index: 2;
+    margin-top: -170px;
+  }
+  .skill-bx {
+    text-align: center;
+    padding: 60px 190px;
+    margin-top: 0px;
+  }
+  .skill-bx-txt {
+    border-radius: 39px;
+    background-image: linear-gradient(to bottom, #051937, #004d7a, #008793, #00bf72, #a8eb12);
+    box-shadow:  0px 37px 70px #292929;
+    text-align: center;
+  }
+  .text-content {
+    padding-top: 50px;
+  }
+}
+
+@media (max-width: 998px) {
+  .skill {
+    padding: 0 0 50px 0;
+    position: relative;
+    z-index: 2;
+    margin-top: -340px;
+  }
+  .skill-bx {
+    border-radius: 39px;
+    background-image: linear-gradient(to bottom, #051937, #004d7a, #008793, #00bf72, #a8eb12);
+    box-shadow:  37px 37px 100px #060606,
+                -37px -37px 100px #1a1a1a;
+    text-align: center;
+    padding: 60px 50px;
+    margin-top: 0px;
+    z-index: 3;
+  }
+}
+
+@media (min-width: 1200px) {
   .gallery-wrapper { 
     display: flex;
     flex-direction: column;
-    gap: 80px; /* Spacing between rows */
+    gap: 80px;
   }
 }
 

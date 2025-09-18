@@ -33,7 +33,7 @@ export const Skills = () => {
             <div className="row">
                 <div className="col-12">
                     <div className="skill-bx wow zoomIn">
-                        <h2>Skills</h2>
+                        <h2 className="skills-bx">Skills</h2>
                         {/* Carousel - Only shows on mobile/tablet */}
                         <div className="d-block d-lg-none">
                           <Carousel 
@@ -152,9 +152,9 @@ export const Skills = () => {
                                 </div>
                               </div>
                             </Col>
-                            <Col xs={12} md={12} xl={6} className="text-content">
-                              <p>
-                                I'm a Computer Science Student at Mapúa University specializing in Application Development.
+                            <Col xs={12} md={12} xl={6} className="skill-bx-txt">
+                              <p className="text-content">
+                                I'm a Computer Science graduate at Mapúa University specializing in Application Development.
                                 Throughout my journey as a student, I have developed projects that uses Java, JavaScript,
                                 Python, HTML, CSS, PHP, and MySQL. I also have experience using frameworks such as ReactJS,
                                 Angular, Ionic, and Spring Boot.
