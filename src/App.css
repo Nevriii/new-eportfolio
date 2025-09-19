@@ -1,3 +1,4 @@
+/* Default css */
 /* Custom Font */
 @font-face {
 	font-family: Centra;
@@ -31,8 +32,8 @@ body {
   font-weight: 400;
   overflow-x: hidden;
   position: relative;
-  /* background-color: #121212 !important; */
-  background-image: url("./assets/img/endless-constellation.svg");
+  background-color: #121212 !important;
+  /* background-image: url("./assets/img/endless-constellation.svg"); */
   color: #fff !important;
   font-family: 'Centra', sans-serif !important;
 }
