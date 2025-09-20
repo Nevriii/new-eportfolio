@@ -8,6 +8,11 @@ import navIcon3 from '../assets/img/nav-icon3.svg';
 export const NavBar = () => {
     const [activeLink, setActivelink] = useState('home');
     const [scrolled, seScrolled] = useState(false);
+    const [isDarkMode, setIsDarkMode] = useState(() => {
+        // Check localStorage for saved theme preference
+        const savedTheme = localStorage.getItem('theme');
+        return savedTheme === 'dark';
+    });
 
     useEffect(() => {
         const onScroll = () => {
@@ -52,38 +57,46 @@ export const NavBar = () => {
         return () => window.removeEventListener("scroll", onScroll);
     }, [])
 
-
-
+    // Initialize theme on component mount
     useEffect(() => {
-        const sections = document.querySelectorAll('section[id]');
+        const savedTheme = localStorage.getItem('theme');
+        const bannerElement = document.querySelector('.banner');
         
-        const observerOptions = {
-            root: null,
-            rootMargin: '-50% 0px -50% 0px',
-            threshold: 0
-        };
+        if (savedTheme === 'dark') {
+            document.body.classList.add('dark-body');
+            if (bannerElement) {
+                bannerElement.classList.add('banner-dark');
+            }
+            setIsDarkMode(true);
+        } else {
+            document.body.classList.remove('dark-body');
+            if (bannerElement) {
+                bannerElement.classList.remove('banner-dark');
+            }
+            setIsDarkMode(false);
+        }
+    }, []);
 
-        const observerCallback = (entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const sectionId = entry.target.getAttribute('id');
-                    setActivelink(sectionId);
-                }
-            });
-        };
-
-        const observer = new IntersectionObserver(observerCallback, observerOptions);
+    // Handle theme toggle with React state
+    const handleThemeToggle = (e) => {
+        const isChecked = e.target.checked;
+        const bannerElement = document.querySelector('.banner');
+        setIsDarkMode(isChecked);
         
-        sections.forEach(section => {
-            observer.observe(section);
-        });
-
-        return () => {
-            sections.forEach(section => {
-                observer.unobserve(section);
-            });
-        };
-    }, [])
+        if (isChecked) {
+            document.body.classList.add('dark-body');
+            if (bannerElement) {
+                bannerElement.classList.add('banner-dark');
+            }
+            localStorage.setItem('theme', 'dark');
+        } else {
+            document.body.classList.remove('dark-body');
+            if (bannerElement) {
+                bannerElement.classList.remove('banner-dark');
+            }
+            localStorage.setItem('theme', 'light');
+        }
+    };
 
     return (
         <Navbar expand="lg" className={scrolled ? "scrolled" : ""}>
@@ -101,7 +114,6 @@ export const NavBar = () => {
                         <Nav.Link href="#skills" className={activeLink === 'skills' ? 'active navbar-link' : 'navbar-link2'}>Skills</Nav.Link>
                         <Nav.Link href="#projects" className={activeLink === 'projects' ? 'active navbar-link' : 'navbar-link2'}>Projects</Nav.Link>
                         <Nav.Link href="#ecerts" className={activeLink === 'ecerts' ? 'active navbar-link' : 'navbar-link2'}>E-Certificates</Nav.Link>
-                        {/* <Nav.Link href="contact" className={activeLink === 'contact' ? 'active navbar-link' : 'navbar-link'}>Contact</Nav.Link> */}
                     </Nav>
                     <span className="navbar-text">
                         <div className="social-icon">
@@ -109,6 +121,12 @@ export const NavBar = () => {
                             <a href="#"><img src={navIcon2} alt="" /></a>
                             <a href="#"><img src={navIcon3} alt="" /></a>
                         </div>
+                        <input 
+                            className="theme-toggle" 
+                            type="checkbox" 
+                            checked={isDarkMode}
+                            onChange={handleThemeToggle}
+                        />
                     </span>
                 </Navbar.Collapse>
             </Container>
