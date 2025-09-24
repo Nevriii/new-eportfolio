@@ -33,9 +33,9 @@ export const Skills = () => {
                 <div className="row">
                     <div className="col-12">
                         <div className="skill-bx wow zoomIn">
-                            <h2 className="skills-bx">Skills</h2>
+                            <h2 className="skills-bx" data-aos="fade-down">Skills</h2>
                             {/* Carousel - Only shows on mobile/tablet */}
-                            <div className="d-block d-lg-none">
+                            <div className="d-block d-lg-none" data-aos="zoom-out-right" data-aos-delay="100">
                                 <Carousel 
                                     responsive={responsive} 
                                     infinite={true}
@@ -46,6 +46,7 @@ export const Skills = () => {
                                     transitionDuration={600}     // Transition duration
                                     removeArrowOnDeviceType={["tablet", "mobile"]} // Remove arrows on all devices
                                     className="owl-carousel owl-theme skill-slider"
+                                    data-aos="zoom-out-right" data-aos-delay="300"
                                 >
                                     <div className="item">
                                         <img src={logo6} alt="Image" />
@@ -86,6 +87,7 @@ export const Skills = () => {
                                     transitionDuration={800}
                                     removeArrowOnDeviceType={["tablet", "mobile"]}
                                     className="owl-carousel owl-theme skill-slider"
+                                    data-aos="zoom-out-right" data-aos-delay="100"
                                 >
                                     <div className="item">
                                         <img src={logo10} alt="Image" />
@@ -108,7 +110,7 @@ export const Skills = () => {
                             <Container>
                                 <Row className="align-items-center justify-content-center">
                                     {/* Rotating Gallery - Only shows on desktop/laptop */}
-                                    <Col xs={12} md={6} xl={6} className="text-content d-none d-lg-block">
+                                    <Col xs={12} md={6} xl={6} className="text-content d-none d-lg-block" data-aos="zoom-out-right" data-aos-delay="300">
                                         <div className="gallery-wrapper container d-flex flex-column me-md-5" style={{ paddingRight: "20px" }}>
                                             <div className="gallery">
                                                 <span style={{ "--i": 1 }}>
@@ -151,7 +153,7 @@ export const Skills = () => {
                                             </div>
                                         </div>
                                     </Col>
-                                    <Col xs={12} md={12} xl={6} className="skill-bx-txt">
+                                    <Col xs={12} md={12} xl={6} className="skill-bx-txt" data-aos="zoom-out-left" data-aos-delay="300">
                                         <p className="text-content">
                                             I'm a Computer Science graduate at Mapúa University specializing in Application Development.
                                             Throughout my journey as a student, I have developed projects that uses Java, JavaScript,

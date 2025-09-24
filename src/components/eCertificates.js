@@ -54,16 +54,6 @@ export const ECertificates = () => {
         return () => window.removeEventListener('scroll', handleScroll);
     }, [Photo.length]);
 
-    useEffect(() => {
-        const timer = setTimeout(() => {
-            const nextSection = document.getElementById('skills');
-            if (nextSection) {
-                nextSection.scrollIntoView({ behavior: 'smooth' });
-            }
-        }, 8000);
-        return () => clearTimeout(timer);
-    }, []);
-
     return (
         <section className="e-certs" id="ecerts">
             <div className="e-certificates">

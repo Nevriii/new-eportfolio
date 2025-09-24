@@ -90,17 +90,17 @@ export const Projects = () => {
   ]
 
   return (
-    <section className="project" id="projects">
+    <section className="project" id="projects" data-aos="fade-up">
       <Container>
         <Row>
           <Col size={12}>
             <TrackVisibility>
               {({ isVisible }) =>
-              <div className="isVisible">
-                <h2>Projects</h2>
-                <p>These are the projects I've developed during my journey as a student.</p>
+              <div className="isVisible" data-aos="fade-up" data-aos-delay="100">
+                <h2 data-aos="fade-down">Projects</h2>
+                <p data-aos="fade-up" data-aos-delay="150">These are the projects I've developed during my journey as a student.</p>
                 <Tab.Container id="projects-tabs" defaultActiveKey="first">
-                  <Nav variant="pills" className="nav-pills mb-5 justify-content-center align-items-center" id="pills-tab">
+                  <Nav variant="pills" className="nav-pills mb-5 justify-content-center align-items-center" id="pills-tab" data-aos="zoom-in" data-aos-delay="200">
                     <Nav.Item>
                       <Nav.Link eventKey="first">Websites</Nav.Link>
                     </Nav.Item>
@@ -113,7 +113,7 @@ export const Projects = () => {
                   </Nav>
                   <Tab.Content id="slideInUp" className="isVisible">
                     <Tab.Pane eventKey="first">
-                      <Row>
+                      <Row data-aos="fade-up" data-aos-delay="100">
                         {
                           web_projects.map((project, index) => {
                             return (
@@ -129,7 +129,7 @@ export const Projects = () => {
                       </Row>
                     </Tab.Pane>
                     <Tab.Pane eventKey="second">
-                      <Row className="proj-imgbx-img">
+                      <Row className="proj-imgbx-img" data-aos="fade-up" data-aos-delay="100">
                         {
                           mobile_projects.map((project, index) => {
                             return (
@@ -145,7 +145,7 @@ export const Projects = () => {
                       </Row>
                     </Tab.Pane>
                     <Tab.Pane eventKey="third">
-                      <Row>
+                      <Row data-aos="fade-up" data-aos-delay="100">
                         {
                           other_projects.map((project, index) => {
                             return (

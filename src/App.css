@@ -1,4 +1,3 @@
-/* Default CSS */
 /* Custom Font */
 @font-face {
 	font-family: Centra;
@@ -33,7 +32,7 @@ html {
 	--theme-toggle-width: 2.5rem;
 	--theme-toggle-height: 1.5rem;
 	--theme-toggle-circle-width: 0;
-	--theme-toggle-circle-dimensions: calc(var(--theme-toggle-height) - 0.4rem);
+	--theme-toggle-circle-dimensions: calc(var(--theme-toggle-height) - 0.2rem);
 }
 
 /* Light Mode (Default) */
@@ -71,19 +70,22 @@ body {
 }
 
 .theme-toggle::before {
+  background-image: var(--light-icon);
 	content: "";
 	width: var(--theme-toggle-circle-dimensions);
 	height: var(--theme-toggle-circle-dimensions);
-	background-color: #007bff;
+	background-color: #3c3c3c;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 60% 60%;
 	position: absolute;
 	border-radius: 50%;
 	top: 50%;
-	transform: translateY(-50%) translateX(0%);
+	transform: translateY(-50%) translateX(-10%);
 	transition: transform 0.5s;
 }
 
 .theme-toggle::after {
-	/* content: "Light mode"; */
 	white-space: nowrap;
 	color: #111;
 	position: absolute;
@@ -95,17 +97,20 @@ body {
 }
 
 .theme-toggle:checked {
-	background-color: #014501;
+	background-color: #3c3c3c;
 	border: none;
 }
 
 .theme-toggle:checked::before {
 	background-color: #fff;
+  background-image: var(--dark-icon);
+  background-repeat: no-repeat;
+	background-position: center;
+	background-size: 60% 60%;
 	transform: translateY(-50%) translateX(calc(var(--theme-toggle-width) - var(--theme-toggle-height)));
 }
 
 .theme-toggle:checked::after {
-	/* content: "Dark mode"; */
 	color: #fff;
 }
 
@@ -168,7 +173,6 @@ body::before {
   }
 }
 
-/* Small screens - disable spotlight for better performance */
 @media (max-width: 999px) {
   body::before {
     display: none;
@@ -232,8 +236,6 @@ input:focus, textarea:focus, select:focus {
   outline: none;
 }
 
-/* Replace your existing media queries with these updated ones */
-
 @media (min-width:1700px) {
 	main .container {
 		max-width: 100%;
@@ -243,13 +245,11 @@ input:focus, textarea:focus, select:focus {
     width: 500%;
   }
   
-  /* Keep default overlap for large screens */
   .skill {
     margin-top: -390px;
   }
 }
 
-/* Mobile screens: phones */
 @media (max-width: 767px) {
   nav.navbar a.navbar-brand img {
     min-width: 10%;
@@ -257,8 +257,8 @@ input:focus, textarea:focus, select:focus {
   }
 
   .banner {
-    padding: 180px 0 30px 0; /* Reduced padding for mobile */
-    min-height: 120vh; /* Reduced height for mobile */
+    padding: 180px 0 30px 0;
+    min-height: 120vh;
   }
   
   .banner .text-content,
@@ -294,10 +294,10 @@ input:focus, textarea:focus, select:focus {
     padding: 60px 50px;
     margin-top: 0px;
     z-index: 3;
+    transition-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
   }
 }
 
-/* Medium screens: tablets, small laptops */
 @media (min-width: 768px) and (max-width: 1199px) {
   nav.navbar a.navbar-brand img {
     min-width: 10%;
@@ -305,20 +305,19 @@ input:focus, textarea:focus, select:focus {
   }
 
   .banner {
-    padding: 200px 0 40px 0; /* Adjusted for tablets */
+    padding: 200px 0 40px 0;
     min-height: 140vh;
   }
   
   .banner .text-content {
-    padding-left: 80px; /* Reduced from 180px */
+    padding-left: 80px;
   }
   
   .banner h1 {
-    font-size: 55px; /* Adjusted size for tablets */
+    font-size: 55px;
   }
 }
 
-/* Large screens: desktops (keep your existing desktop styles) */
 @media (min-width: 1200px) {
   nav.navbar a.navbar-brand img {
     min-width: 10%;
@@ -346,6 +345,7 @@ p.danger {
 	margin: 10px 0;
 	font-weight: 500;
 }
+
 /************ Navbar Css ************/
 nav.navbar {
   padding: 0px 200px;
@@ -535,12 +535,10 @@ span.navbar-text {
   width: 40%;
   z-index: 1;
   transition: 0.3s ease-in-out;
-  /* Make icons black by default in light mode */
   filter: brightness(50%) saturate(100%) invert(0%) sepia(7%) saturate(98%) hue-rotate(346deg) brightness(95%) contrast(86%);
 }
 
 .social-icon a:hover img {
-  /* Make icons white on hover in light mode */
   filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(750%) hue-rotate(109deg) brightness(119%) contrast(119%);
 }
 
@@ -579,9 +577,7 @@ span.navbar-text {
 .dark-body .social-icon a:hover img {
 	filter: brightness(0) saturate(100%) invert(0%) sepia(7%) saturate(98%) hue-rotate(346deg) brightness(95%) contrast(86%);
 }
-/* Add these CSS rules to your App.css file to move social icons to the right on mobile */
 
-/* Mobile responsive adjustments for navbar */
 @media (max-width: 991px) {
   .navbar-collapse {
     text-align: right;
@@ -607,7 +603,6 @@ span.navbar-text {
   }
 }
 
-/* Ensure proper alignment for the collapsed navbar content */
 @media (max-width: 991px) {
   .navbar-nav .nav-link.navbar-link {
     text-align: right;
@@ -657,24 +652,25 @@ nav.navbar .navbar-toggler:focus {
 	outline: none;
     box-shadow: none;
 }
+
 nav.navbar .navbar-toggler-icon {
   width: 24px;
   height: 17px;
   background-image: none;
   position: relative;
-  border-bottom: 2px solid #fff;
+  border-bottom: 2px solid #000000;
   transition: all 300ms linear;
   top: -2px;
 }
 nav.navbar .navbar-toggler-icon:focus {
-	border-bottom: 2px solid #fff;
+	border-bottom: 2px solid #000000;
 }
 nav.navbar .navbar-toggler-icon:after,
 nav.navbar .navbar-toggler-icon:before {
 	width: 24px;
 	position: absolute;
 	height: 2px;
-	background-color: #fff;
+	background-color: #000000;
 	top: 0;
 	left: 0;
 	content: '';
@@ -686,7 +682,7 @@ nav.navbar .navbar-toggler-icon:after {
 }
 nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon:after {
 	transform: rotate(45deg);
-	background-color: #fff;
+	background-color: #000000;
 	height: 2px;
 }
 nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon:before {
@@ -694,6 +690,46 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon:before {
 	background-color: #fff;
 	height: 2px;
 }
+
+/* dark mode */
+.dark-body nav.navbar .navbar-toggler-icon {
+  width: 24px;
+  height: 17px;
+  background-image: none;
+  position: relative;
+  border-bottom: 2px solid #fff;
+  transition: all 300ms linear;
+  top: -2px;
+}
+.dark-body nav.navbar .navbar-toggler-icon:focus {
+	border-bottom: 2px solid #fff;
+}
+.dark-body nav.navbar .navbar-toggler-icon:after,
+.dark-body nav.navbar .navbar-toggler-icon:before {
+	width: 24px;
+	position: absolute;
+	height: 2px;
+	background-color: #fff;
+	top: 0;
+	left: 0;
+	content: '';
+	z-index: 2;
+	transition: all 300ms linear;
+}
+.dark-body nav.navbar .navbar-toggler-icon:after {
+	top: 8px;
+}
+.dark-body nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon:after {
+	transform: rotate(45deg);
+	background-color: #fff;
+	height: 2px;
+}
+.dark-body nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon:before {
+	transform: translateY(8px) rotate(-45deg);
+	background-color: #fff;
+	height: 2px;
+}
+
 nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 	border-color: transparent;
 }
@@ -708,44 +744,44 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   background-repeat: no-repeat;
   min-height: 160vh;
   position: relative;
-  z-index: 1; /* Ensure banner stays behind skills section */
+  z-index: 1;
 } 
 
 .banner-dark { 
   margin-top: 0; 
-  padding: 260px 0 50px 0; /* Reduced from 100px to 50px */
+  padding: 260px 0 50px 0;
   background-image: url('./assets/img/wave-default-blackbg.svg')!important; 
   background-position: bottom center; 
   background-size: cover; 
   background-repeat: no-repeat;
   min-height: 160vh;
   position: relative;
-  z-index: 1; /* Ensure banner stays behind skills section */
+  z-index: 1;
 } 
 
 @media (max-width: 980px) {
   .banner { 
     margin-top: 0; 
-    padding: 260px 0 50px 0; /* Reduced from 100px to 50px */
+    padding: 260px 0 50px 0;
     background-image: url('./assets/img/wave-purple-mobile.svg'); 
     background-position: bottom center; 
     background-size: cover; 
     background-repeat: no-repeat;
     min-height: 160vh;
     position: relative;
-    z-index: 1; /* Ensure banner stays behind skills section */
+    z-index: 1;
   } 
   
   .banner-dark { 
     margin-top: 0; 
-    padding: 260px 0 50px 0; /* Reduced from 100px to 50px */
+    padding: 260px 0 50px 0;
     background-image: url('./assets/img/wave-blue-mobile.svg')!important; 
     background-position: bottom center; 
     background-size: cover; 
     background-repeat: no-repeat;
     min-height: 160vh;
     position: relative;
-    z-index: 1; /* Ensure banner stays behind skills section */
+    z-index: 1;
   } 
 } 
 
@@ -771,7 +807,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 .banner .tagline {
   font-weight: 900;
   letter-spacing: 4px;
-  padding: 0; /* Remove padding for text effect */
+  padding: 0;
   background: linear-gradient(90deg, #7236aa, #2fbd65, #97aa36, #bd6a2f);
   background-size: 300% 100%;
   background-clip: text;
@@ -780,7 +816,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   font-size: 20px;
   margin-bottom: 16px;
   display: inline-block;
-  text-shadow: none; /* Remove text shadow for clean gradient effect */
+  text-shadow: none;
   animation: gradientMoveSlide 10s ease-in-out infinite;
 }
 
@@ -834,7 +870,6 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 }
 
 .banner img {
-  /* animation: updown 3s linear infinite; */
   width: 100%;
   height: auto;
   max-width: 400px;
@@ -846,7 +881,6 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   border-right: 0.08em solid #666;
 }
 
-/* Responsive adjustments */
 @media (max-width: 768px) {
   .banner .text-content,
   .banner .image-content {
@@ -906,7 +940,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 .gallery {
   position: relative;
   display: flex;
-  gap: 0%; /* Controls spacing between images in each row */
+  gap: 0%;
   width: fit-content;
   height: 80px;
   perspective: 2000px;
@@ -914,7 +948,6 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   animation: rotate 35s linear infinite;
 }
 
-/* Rotation Keyframes */
  @keyframes rotate {
   from {
     transform: perspective(1200px) rotateY(0deg);
@@ -934,16 +967,13 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   transition: transform 0.5s ease-in-out;
 }
 
-/* Image within Rotating Gallery */
 .gallery span img {
   width: 100%;
   height: 100%;
   object-fit: contain;
 }
 
-/* Large screens: desktops (keep your existing desktop styles) */
 @media (min-width: 1200px) {
-  /* Default overlap for desktop */
   .skill {
     padding: 0 0 50px 0;
     position: relative;
@@ -954,13 +984,14 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
     text-align: center;
     padding: 60px 190px;
     margin-top: 0px;
+    transition-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
   }
   .skill-bx-txt {
     border-radius: 20px;
-    background: rgba(255, 255, 255, 0.1); /* translucent background */
+    background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(12px);
-    box-shadow: 0px 8px 32px rgba(0, 0, 0, 0.37); /* soft depth */
+    box-shadow: 0px 8px 32px rgba(0, 0, 0, 0.37);
     text-align: center;
   }
   
@@ -986,10 +1017,10 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   }
   .skill-bx-txt {
     border-radius: 20px;
-    background: rgba(255, 255, 255, 0.1); /* translucent background */
+    background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(12px);
-    box-shadow: 0px 8px 32px rgba(0, 0, 0, 0.37); /* soft depth */
+    box-shadow: 0px 8px 32px rgba(0, 0, 0, 0.37);
     text-align: center;
   }
   .text-content {
@@ -1023,30 +1054,25 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   }
 }
 
-/* Main carousel container */
 .carousel-container {
   overflow: hidden;
   position: relative;
 }
 
-/* Slider track */
 .carousel-slider {
   display: flex;
   transition: transform 600ms ease-in-out;
 }
 
-/* Individual items */
 .carousel-item {
-  padding: 0 10px; /* Add some spacing between items */
+  padding: 0 10px;
   transition: transform 300ms ease;
 }
 
-/* Optional hover effect */
 .carousel-item:hover {
   transform: scale(1.05);
 }
 
-/* Remove default button styles */
 .react-multi-carousel__arrow {
   display: none !important;
 }
@@ -1196,17 +1222,13 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   z-index: -4;
 }
 
-/* for smaller screens */
-
 @media (min-width: 589px) and (max-width: 989px) {
-  /* Only affect regular project cards, not mobile ones */
   .project .tab-pane .row:not(.proj-imgbx-img) .col,
   .project .tab-pane .row:not(.proj-imgbx-img) [class*="col-"] {
     flex: 0 0 50% !important;
     max-width: 50% !important;
   }
   
-  /* Regular project cards - make them bigger */
   .proj-imgbx:not(.proj-imgbx-img .proj-imgbx) {
     max-width: 500px !important;
     max-height: 350px !important;
@@ -1216,8 +1238,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
     overflow: hidden;
     position: relative;
   }
-  
-  /* Keep mobile project cards small */
+
   .proj-imgbx-img .proj-imgbx {
     max-width: 200px !important;
     margin: 0 auto !important;
@@ -1257,24 +1278,6 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
     opacity: 1;
   }
   
-  /* .proj-txtx h4 {
-    font-size: 14px;
-    font-weight: 700;
-    letter-spacing: 0.8px;
-    line-height: 1.2em;
-    margin-bottom: 8px;
-    color: #fff;
-  }
-  
-  .proj-txtx span {
-    font-style: italic;
-    font-weight: 400;
-    font-size: 10px;
-    letter-spacing: 0.5px;
-    color: #fff;
-    line-height: 1.4em;
-  } */
-
   .proj-txtx h4 {
     font-size: 12px;
     font-weight: 600;
@@ -1311,27 +1314,22 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   }
 }
 
-
-/* Project-img for mobile img project */
-
 .proj-imgbx-img img {
   width: 100%!important;
   height: auto!important;
 }
-/* Make the container smaller to match the image */
+
 .proj-imgbx-img .proj-imgbx {
-  max-width: 200px; /* Adjust this value as needed */
-  margin: 0 auto; /* Center the container */
+  max-width: 200px; 
+  margin: 0 auto;
 }
 
-/* Keep image at 100% of its container */
 .proj-imgbx-img .proj-imgbx img {
   width: 100% !important;
   height: auto !important;
-  object-fit: cover; /* Maintains aspect ratio */
+  object-fit: cover;
 }
 
-/* The overlay should match the container */
 .proj-imgbx-img .proj-imgbx::before {
   content: "";
   background: linear-gradient(90.21deg, #004d7a, #008793, #00bf72, #a8eb12 111.58%);
@@ -1346,12 +1344,11 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   height: 100%;
 }
 
-/* Fix text positioning - keep it centered */
 .proj-imgbx-img .proj-txtx {
   position: absolute;
   text-align: center;
   top: 65%;
-  left: 50%; /* Keep at 50% for center alignment */
+  left: 50%;
   transform: translate(-50%, -50%);
   transition: 0.5s ease-in-out;
   opacity: 0;
@@ -1374,9 +1371,8 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   flex: 0 0 auto;
 }
 
-/* Optional: Adjust font sizes for smaller mobile cards */
 .proj-imgbx-img .proj-txtx h4 {
-  font-size: 16px; /* Smaller than the original 20px */
+  font-size: 16px;
   font-weight: 700;
   letter-spacing: 0.8px;
   line-height: 1.1em;
@@ -1385,13 +1381,12 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 .proj-imgbx-img .proj-txtx span {
   font-style: italic;
   font-weight: 400;
-  font-size: 9px; /* Smaller than the original 10px */
+  font-size: 9px;
   letter-spacing: 0.5px;
 }
 
 /************ Projects Css ************/
 .contact {
-  /* background: linear-gradient(90.21deg, #AA367C -5.91%, #4A2FBD 111.58%); */
   padding: 60px 0 200px 0;
 }
 .contact img {
@@ -1672,7 +1667,6 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 	width: 0%;
 }
 
-/* Mobile responsiveness for sidebar */
 @media (max-width: 768px) {
   .hire-me-sidebar {
     right: -70px;

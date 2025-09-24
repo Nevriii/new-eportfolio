@@ -1,9 +1,26 @@
 import { useState, useEffect } from "react";
 import { Navbar, Container, Nav } from "react-bootstrap";
-import logo from '../assets/img/logo-white.png';
+import logoWhite from '../assets/img/logo-white.png';
+import logoBlack from '../assets/img/logo-black.png';
 import navIcon1 from '../assets/img/nav-icon1.svg';
 import navIcon2 from '../assets/img/nav-icon2.svg';
 import navIcon3 from '../assets/img/nav-icon3.svg';
+import lightModeIcon from '../assets/img/light-icon.svg';
+import darkModeIcon from '../assets/img/dark-icon.svg';
+
+
+function useMediaQuery(query) {
+    const [matches, setMatches] = useState(window.matchMedia(query).matches);
+  
+    useEffect(() => {
+      const media = window.matchMedia(query);
+      const listener = () => setMatches(media.matches);
+      media.addEventListener("change", listener);
+      return () => media.removeEventListener("change", listener);
+    }, [query]);
+  
+    return matches;
+  }
 
 export const NavBar = () => {
     const [activeLink, setActivelink] = useState('home');
@@ -13,6 +30,9 @@ export const NavBar = () => {
         const savedTheme = localStorage.getItem('theme');
         return savedTheme === 'dark';
     });
+    const isTabletOrMobile = useMediaQuery("(max-width: 991px)");
+    const currentLogo =
+    !isDarkMode && isTabletOrMobile ? logoBlack : logoWhite;
 
     useEffect(() => {
         const onScroll = () => {
@@ -102,7 +122,7 @@ export const NavBar = () => {
         <Navbar expand="lg" className={scrolled ? "scrolled" : ""}>
             <Container>
                 <Navbar.Brand href="#home">
-                    <img src={logo} alt="Logo"/>
+                    <img src={currentLogo} alt="Logo"/>
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav">
                     <span className="navbar-toggler-icon"></span>
@@ -117,12 +137,13 @@ export const NavBar = () => {
                     </Nav>
                     <span className="navbar-text">
                         <div className="social-icon">
-                            <a href="#"><img src={navIcon1} alt="" /></a>
-                            <a href="#"><img src={navIcon2} alt="" /></a>
-                            <a href="#"><img src={navIcon3} alt="" /></a>
+                            <a href="https://www.linkedin.com/in/ervin-tejada-a18239242" target="_blank" rel="noopener noreferrer"><img src={navIcon1} alt="" /></a>
+                            <a href="https://github.com/Nevriii" target="_blank" rel="noopener noreferrer"><img src={navIcon2} alt="" /></a>
+                            <a href="mailto:ervintejada05@gmail.com"><img src={navIcon3} alt="Email" /></a>
                         </div>
                         <input 
-                            className="theme-toggle" 
+                            className="theme-toggle"
+                            style= {{ '--light-icon': `url(${lightModeIcon})`, '--dark-icon': `url(${darkModeIcon})` }} 
                             type="checkbox" 
                             checked={isDarkMode}
                             onChange={handleThemeToggle}

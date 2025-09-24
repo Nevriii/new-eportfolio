@@ -10,6 +10,7 @@ import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useEffect } from 'react';
+import 'aos/dist/aos.css';
 
 function App() {
   useEffect(() => {
