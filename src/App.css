@@ -1672,6 +1672,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
     right: -70px;
     padding: 12px 25px;
     font-size: 14px;
+    z-index: 1000!important;
   }
   
   .hire-me-sidebar:hover {
