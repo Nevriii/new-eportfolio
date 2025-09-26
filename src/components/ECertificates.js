@@ -60,7 +60,7 @@ export const ECertificates = () => {
       }, []);
 
     return (
-        <section className="e-certs" id="ecerts">
+        <section className="e-certs" id="ecerts" ref={sectionRef}>
             <div className="e-certificates">
                 <div className="container">
                     <div className="row">
@@ -73,7 +73,6 @@ export const ECertificates = () => {
                                             key={index}
                                             className={index === currentIndex ? 'active' : ''}
                                             data-index={index}
-                                            ref={sectionRef}
                                         >
                                             <img src={photo} alt={`eCertificate ${index + 1}`}/>
                                         </figure>
