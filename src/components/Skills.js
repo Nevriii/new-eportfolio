@@ -14,6 +14,7 @@ import logo8 from "../assets/img/skills-logo/phplogo.png";
 import logo9 from "../assets/img/skills-logo/pythonlogo.png";
 import logo10 from "../assets/img/skills-logo/reactjslogo.png";
 import logo11 from "../assets/img/skills-logo/springbootlogo.png";
+import Aos from 'aos';
 
 export const Skills = () => {
     const responsive = {
@@ -26,6 +27,9 @@ export const Skills = () => {
             items: 2
         }
     };
+    useEffect(() => {
+        Aos.init({ duration: 800, easing: 'cubic-bezier(0.6, 0.04, 0.98, 0.335)', once: true, offset: 50 });
+      }, []);
 
     return (
         <section className="skill" id="skills">

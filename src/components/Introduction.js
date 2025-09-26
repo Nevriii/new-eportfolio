@@ -5,10 +5,10 @@ import Aos from 'aos';
 
 export const Introduction = () => {
     useEffect(() => {
-        Aos.init({ duration: 800, easing: 'cubic-bezier(0.95, 0.05, 0.795, 0.035)', once: true, offset: 50 });
+        Aos.init({ duration: 800, easing: 'cubic-bezier(0.785, 0.135, 0.15, 0.86)', once: true, offset: 50 });
       }, []);
     return (
-        <section className="banner" id="home" data-aos="zoom-out-down" data-aos-delay="100">
+        <section className="banner" id="home" data-aos="fade-down" data-aos-delay="100">
             <Container>
                 <Row className="align-items-center justify-content-center">
                     <Col xs={12} md={6} xl={6} className="text-content" data-aos="fade-right" data-aos-delay="300">

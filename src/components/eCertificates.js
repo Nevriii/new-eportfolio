@@ -8,6 +8,7 @@ import greedy_algorithms from "../assets/img/ecerts-logo/greedy_algorithms.png";
 import intro_to_ai_cert from "../assets/img/ecerts-logo/intro_to_ai_cert.png";
 import software_development_process_and_methodologies from "../assets/img/ecerts-logo/software_development_process_and_methodologies.png";
 import version_control_git from "../assets/img/ecerts-logo/version_control_git.png";
+import Aos from "aos";
 
 export const ECertificates = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
@@ -54,6 +55,10 @@ export const ECertificates = () => {
         return () => window.removeEventListener('scroll', handleScroll);
     }, [Photo.length]);
 
+    useEffect(() => {
+        Aos.init({ duration: 800, easing: 'cubic-bezier(0.6, 0.04, 0.98, 0.335)', once: true, offset: 50 });
+      }, []);
+
     return (
         <section className="e-certs" id="ecerts">
             <div className="e-certificates">
@@ -61,7 +66,7 @@ export const ECertificates = () => {
                     <div className="row">
                         <div className="col-12">
                             <div className="e-certificates-bx">
-                                <h2>eCertificates</h2>
+                                <h2 data-aos="zoom-out-up" data-aos-delay="100">eCertificates</h2>
                                 <div className="certificates-container">
                                     {Photo.map((photo, index) => (
                                         <figure 
