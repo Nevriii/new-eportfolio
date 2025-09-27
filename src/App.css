@@ -25,6 +25,7 @@
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 75px;
+  overflow-x:hidden;
 }
 
 /* Light/Dark Mode Theme System */
@@ -38,7 +39,7 @@ html {
 /* Light Mode (Default) */
 body {
   font-weight: 400;
-  overflow-x: hidden;
+  overflow-x: hidden!important;
   position: relative;
   background-color: #ffffff !important;
   background-image: url("./assets/img/endless-constellation-whitebg.svg");
@@ -259,6 +260,7 @@ input:focus, textarea:focus, select:focus {
   .banner {
     padding: 180px 0 30px 0;
     min-height: 120vh;
+    overflow-x: hidden;
   }
   
   .banner .text-content,
@@ -283,6 +285,7 @@ input:focus, textarea:focus, select:focus {
     position: relative;
     z-index: 2;
     margin-top: -150px;
+    overflow-x: hidden;
   }
   .skill-bx {
     border-radius: 39px;
@@ -307,6 +310,7 @@ input:focus, textarea:focus, select:focus {
   .banner {
     padding: 200px 0 40px 0;
     min-height: 140vh;
+    overflow-x: hidden;
   }
   
   .banner .text-content {
@@ -354,6 +358,7 @@ nav.navbar {
   top: 0;
   z-index: 9999;
   transition:  0.32s ease-in-out;
+  overflow-x: hidden;
 }
 nav.navbar.scrolled {
   padding: 0px 0;
@@ -745,6 +750,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   min-height: 160vh;
   position: relative;
   z-index: 1;
+  overflow-x: hidden;
 } 
 
 .banner-dark { 
@@ -757,6 +763,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   min-height: 160vh;
   position: relative;
   z-index: 1;
+  overflow-x: hidden;
 } 
 
 @media (max-width: 980px) {
@@ -770,6 +777,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
     min-height: 160vh;
     position: relative;
     z-index: 1;
+    overflow-x: hidden;
   } 
   
   .banner-dark { 
@@ -905,6 +913,10 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 	font-size: 45px;
 	font-weight: 700;
 }
+.skill h5 {
+  font-size: 15px;
+	font-weight: 700;
+}
 .skill p {
     color: #B8B8B8;
     font-size: 18px;
@@ -979,12 +991,14 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
     position: relative;
     z-index: 2;
     margin-top: -190px;
+    overflow-x: hidden;
   }
   .skill-bx {
     text-align: center;
     padding: 60px 190px;
     margin-top: 0px;
     transition-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+    overflow-x: hidden;
   }
   .skill-bx-txt {
     border-radius: 20px;
@@ -1081,6 +1095,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 .project {
   padding: 80px 0;
   position: relative;
+  overflow-x: hidden;
   
 }
 .project h2 {
@@ -1385,7 +1400,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   letter-spacing: 0.5px;
 }
 
-/************ Projects Css ************/
+/************ Contact Css ************/
 .contact {
   padding: 60px 0 200px 0;
 }
@@ -1506,6 +1521,9 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 }
 
 /* ************ e-certificates Css ************/
+.e-certificates{
+  
+}
 .e-certs h2 {
   font-size: 45px;
 	font-weight: 700;
@@ -1519,14 +1537,31 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   right: -60px;
   top: 50%;
   transform: translateY(-50%) rotate(270deg);
-  background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(90deg, #00ff48 0%, #00aaff 100%);
   color: white;
   padding: 12px 10px;
   border-radius: 10px 10px 0 0;
   cursor: pointer;
   z-index: 1000;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 15px rgb(255, 255, 255);
+  font-weight: 600;
+  font-size: 16px;
+  letter-spacing: 6px;
+}
+.dark-body .hire-me-sidebar {
+  position: fixed;
+  right: -60px;
+  top: 50%;
+  transform: translateY(-50%) rotate(270deg);
+  background: linear-gradient(90deg, #00ff48 0%, #00aaff 100%);
+  color: white;
+  padding: 12px 10px;
+  border-radius: 10px 10px 0 0;
+  cursor: pointer;
+  z-index: 99999;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 20px rgb(246, 255, 84);
   font-weight: 600;
   font-size: 16px;
   letter-spacing: 6px;
@@ -1534,7 +1569,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 
 .hire-me-sidebar:hover {
   right: -45px;
-  background: linear-gradient(90deg, #764ba2 0%, #667eea 100%);
+  background: linear-gradient(90deg, #00aaff 0%, #00ff48 100%);
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
   transform: translateY(-50%) rotate(270deg) scale(1.05);
 }
