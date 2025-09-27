@@ -798,7 +798,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 }
 
 .banner .text-content {
-  padding-left: 180px;
+  padding-left: clamp(20px, 10vw, 180px);
   display: flex;
   flex-direction: column;
   justify-content: center;
