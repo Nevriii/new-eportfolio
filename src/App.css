@@ -1282,7 +1282,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   width: 56%;
 }
 .project .nav.nav-pills {
-  width: 80%;
+  width: 90%;
   margin: 0 auto;
   border-radius: 50px;
   background-color: rgba(0, 0, 0, 0.1);
@@ -1326,7 +1326,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
     position: absolute;
     width: 0;
     height: 100%;
-    background: linear-gradient(190.21deg, #004d7a, #008793, #00bf72, #a8eb12 111.58%);
+    background: linear-gradient(190.21deg, #004d7a, #008793, #b46eff, #7b00ff 111.58%);
     top: 0;
     left: 0;
     z-index: -1;
@@ -1358,7 +1358,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 }
 .proj-imgbx::before {
   content: "";
-  background: linear-gradient(90.21deg, #004d7a, #008793, #00bf72, #a8eb12 111.58%);
+  background: linear-gradient(200deg, #004d7a, #008793, #b46eff, #7b00ff 105%);
   opacity: 0.85;
   position: absolute;
   width: 100%;
@@ -1480,7 +1480,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   
   .proj-imgbx::before {
     content: "";
-    background: linear-gradient(90.21deg, #004d7a, #008793, #00bf72, #a8eb12 111.58%);
+    background: linear-gradient(200deg, #004d7a, #008793, #b46eff, #7b00ff 105%);
     opacity: 0.85;
     position: absolute;
     width: 100%;
@@ -1513,10 +1513,10 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   height: auto !important;
   object-fit: cover;
 }
-
+/* Mobile tab */
 .proj-imgbx-img .proj-imgbx::before {
   content: "";
-  background: linear-gradient(90.21deg, #004d7a, #008793, #00bf72, #a8eb12 111.58%);
+  background: linear-gradient(200.21deg, #004d7a, #008793, #b46eff, #7b00ff 105%);
   opacity: 0.85;
   position: absolute;
   width: 100% !important;
@@ -1704,6 +1704,24 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   top: 50%;
   transform: translateY(-50%) rotate(270deg);
   background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 12px 10px;
+  border-radius: 10px 10px 0 0;
+  cursor: pointer;
+  z-index: 1000;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
+  font-weight: 600;
+  font-size: 16px;
+  letter-spacing: 6px;
+}
+.dark-body .hire-me-sidebar {
+  position: fixed;
+  right: -60px;
+  top: 50%;
+  transform: translateY(-50%) rotate(270deg);
+  background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+  /* linear-gradient(190.21deg, #004d7a, #008793, #b46eff, #7b00ff 111.58%); */
   color: white;
   padding: 12px 10px;
   border-radius: 10px 10px 0 0;

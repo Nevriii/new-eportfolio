@@ -97,10 +97,10 @@ export const Projects = () => {
             <TrackVisibility>
               {({ isVisible }) =>
               <div className="isVisible" data-aos="fade-up" data-aos-delay="100">
-                <h2 data-aos="fade-down" className="project-container-title">Projects</h2>
-                <p data-aos="fade-up" data-aos-delay="150" className="project-container-txt">These are the projects I've developed during my journey as a student.</p>
+                <h2 data-aos="fade-down">Projects</h2>
+                <p data-aos="fade-up" data-aos-delay="150">These are the projects I've developed during my journey as a student.</p>
                 <Tab.Container id="projects-tabs" defaultActiveKey="first">
-                  <Nav variant="pills" className="nav-pills mb-5 justify-content-center align-items-center project-container-title" id="pills-tab" data-aos="zoom-in" data-aos-delay="200">
+                  <Nav variant="pills" className="nav-pills mb-5 justify-content-center align-items-center" id="pills-tab" data-aos="zoom-in" data-aos-delay="200">
                     <Nav.Item>
                       <Nav.Link eventKey="first">Websites</Nav.Link>
                     </Nav.Item>
