@@ -25,7 +25,25 @@
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 75px;
-  /* width: 100%; */
+  width: 100%;
+}
+
+@media (min-width: 400px) and (max-width: 800px) {
+  html {
+    width: 50%;
+  }
+}
+
+@media (min-width: 200px) and (max-width: 399px) {
+  html {
+    width: 50%;
+  }
+}
+
+@media (min-width: 821px) and (max-width: 950px) {
+  html {
+    width: 91%;
+  }
 }
 
 /* Light/Dark Mode Theme System */
@@ -252,7 +270,7 @@ input:focus, textarea:focus, select:focus {
   }
 }
 
-@media (min-width: 300px) and (max-width: 767px) {
+@media (min-width: 400px) and (max-width: 767px) {
   nav.navbar a.navbar-brand img {
     min-width: 10%;
     width: 200%;
@@ -260,7 +278,7 @@ input:focus, textarea:focus, select:focus {
 
   .banner {
     padding: 180px 0 30px 0;
-    width: 120%;
+    width: 200%;
     min-height: 120vh;
     z-index: -150;
     overflow-x: hidden;
@@ -289,6 +307,7 @@ input:focus, textarea:focus, select:focus {
     margin-left: 20%;
     z-index: 2;
     margin-top: -150px;
+    width: 115%;
   }
   .skill-bx {
     border-radius: 39px;
@@ -304,13 +323,80 @@ input:focus, textarea:focus, select:focus {
   }
   .project{
     margin-left: 20%;
+    width: 110%;
   }
   .e-certs{
     margin-left: 20%;
+    width: 110%;
   }
   .footer{
     overflow-x: hidden;
-    width:120%;
+    width:150%;
+  }
+}
+
+@media (min-width: 200px) and (max-width: 399px) {
+  nav.navbar a.navbar-brand img {
+    min-width: 10%;
+    width: 200%;
+  }
+
+  .banner {
+    padding: 180px 0 30px 0;
+    width: 200%;
+    min-height: 120vh;
+    z-index: -150;
+    overflow-x: hidden;
+  }
+  
+  .banner .text-content,
+  .banner .image-content {
+    padding-left: 20px;
+    padding-right: 20px;
+    text-align: center;
+  }
+  
+  .banner .text-content {
+    align-items: center;
+    margin-bottom: 30px;
+  }
+  
+  .banner h1 {
+    font-size: 45px;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
+  }
+
+  .skill {
+    padding: 0 0 50px 0;
+    position: relative;
+    margin-left: 20%;
+    z-index: 2;
+    margin-top: -150px;
+    width: 115%;
+  }
+  .skill-bx {
+    border-radius: 39px;
+    background-image: linear-gradient(to bottom, #051937, #004d7a, #008793, #00bf72, #a8eb12);
+    box-shadow:  37px 37px 100px #060606,
+                -37px -37px 100px #1a1a1a;
+
+    text-align: center;
+    padding: 60px 50px;
+    margin-top: 0px;
+    z-index: 3;
+    transition-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+  }
+  .project{
+    margin-left: 20%;
+    width: 110%;
+  }
+  .e-certs{
+    margin-left: 20%;
+    width: 110%;
+  }
+  .footer{
+    overflow-x: hidden;
+    width:150%;
   }
 }
 
@@ -323,9 +409,7 @@ input:focus, textarea:focus, select:focus {
   .banner {
     padding: 200px 0 40px 0;
     min-height: 140vh;
-    width: 120%;
-    z-index: -150;
-    overflow-x: hidden;
+    width: 110%;
   }
   
   .banner .text-content {
@@ -334,35 +418,6 @@ input:focus, textarea:focus, select:focus {
   
   .banner h1 {
     font-size: 55px;
-  }
-  .skill {
-    padding: 0 0 50px 0;
-    position: relative;
-    margin-left: 20%;
-    z-index: 2;
-    margin-top: -150px;
-  }
-  .skill-bx {
-    border-radius: 39px;
-    background-image: linear-gradient(to bottom, #051937, #004d7a, #008793, #00bf72, #a8eb12);
-    box-shadow:  37px 37px 100px #060606,
-                -37px -37px 100px #1a1a1a;
-
-    text-align: center;
-    padding: 60px 50px;
-    margin-top: 0px;
-    z-index: 3;
-    transition-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
-  }
-  .project{
-    margin-left: 20%;
-  }
-  .e-certs{
-    margin-left: 20%;
-  }
-  .footer{
-    overflow-x: hidden;
-    width:120%;
   }
 }
 
