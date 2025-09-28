@@ -25,6 +25,7 @@
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 75px;
+  /* width: 100%; */
 }
 
 /* Light/Dark Mode Theme System */
@@ -37,6 +38,7 @@ html {
 
 /* Light Mode (Default) */
 body {
+  /* width: 100%; */
   font-weight: 400;
   overflow-x: hidden;
   position: relative;
@@ -239,7 +241,7 @@ input:focus, textarea:focus, select:focus {
 @media (min-width:1700px) {
 	main .container {
 		max-width: 100%;
-		padding: 0 150px;
+		/* padding: 0 150px; */
 	}
   nav.navbar a.navbar-brand {
     width: 500%;
@@ -250,7 +252,7 @@ input:focus, textarea:focus, select:focus {
   }
 }
 
-@media (max-width: 767px) {
+@media (min-width: 400px) and (max-width: 767px) {
   nav.navbar a.navbar-brand img {
     min-width: 10%;
     width: 200%;
@@ -258,7 +260,10 @@ input:focus, textarea:focus, select:focus {
 
   .banner {
     padding: 180px 0 30px 0;
+    width: 120%;
     min-height: 120vh;
+    z-index: -150;
+    overflow-x: hidden;
   }
   
   .banner .text-content,
@@ -281,6 +286,7 @@ input:focus, textarea:focus, select:focus {
   .skill {
     padding: 0 0 50px 0;
     position: relative;
+    margin-left: 20%;
     z-index: 2;
     margin-top: -150px;
   }
@@ -296,6 +302,16 @@ input:focus, textarea:focus, select:focus {
     z-index: 3;
     transition-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
   }
+  .project{
+    margin-left: 20%;
+  }
+  .e-certs{
+    margin-left: 20%;
+  }
+  .footer{
+    overflow-x: hidden;
+    width:120%;
+  }
 }
 
 @media (min-width: 768px) and (max-width: 1199px) {
@@ -307,6 +323,9 @@ input:focus, textarea:focus, select:focus {
   .banner {
     padding: 200px 0 40px 0;
     min-height: 140vh;
+    width: 120%;
+    z-index: -150;
+    overflow-x: hidden;
   }
   
   .banner .text-content {
@@ -315,6 +334,35 @@ input:focus, textarea:focus, select:focus {
   
   .banner h1 {
     font-size: 55px;
+  }
+  .skill {
+    padding: 0 0 50px 0;
+    position: relative;
+    margin-left: 20%;
+    z-index: 2;
+    margin-top: -150px;
+  }
+  .skill-bx {
+    border-radius: 39px;
+    background-image: linear-gradient(to bottom, #051937, #004d7a, #008793, #00bf72, #a8eb12);
+    box-shadow:  37px 37px 100px #060606,
+                -37px -37px 100px #1a1a1a;
+
+    text-align: center;
+    padding: 60px 50px;
+    margin-top: 0px;
+    z-index: 3;
+    transition-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+  }
+  .project{
+    margin-left: 20%;
+  }
+  .e-certs{
+    margin-left: 20%;
+  }
+  .footer{
+    overflow-x: hidden;
+    width:120%;
   }
 }
 
@@ -743,8 +791,8 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   background-size: cover; 
   background-repeat: no-repeat;
   min-height: 160vh;
-  position: relative;
-  z-index: 1;
+  position:static;
+  z-index: -50;
 } 
 
 .banner-dark { 
